@@ -59,6 +59,11 @@
     tpm2-tss
   ];
 
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    LIBVA_DRIVER_NAME = "nvidia";
+  };
+
   hardware.i2c.enable = true;
 
   services.logind = {
@@ -67,7 +72,7 @@
 
   console.useXkbConfig = true;
 
-  networking.hostName = "hostname";
+  networking.hostName = "Waverley";
 
   
   boot.loader.systemd-boot.enable = true;
@@ -97,9 +102,9 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  users.users.sean = {
+  users.users.marcy = {
     isNormalUser = true;
-    description = "sean";
+    description = "marcy";
     extraGroups = ["networkmanager" "wheel" ];
     openssh.authorizedKeys.keys = [
       # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
@@ -115,6 +120,7 @@
           };
         };
       };
+
       pipewire-pulse = {
         "11-pulse-clock-rate" = {
           "pulse.properties" = {

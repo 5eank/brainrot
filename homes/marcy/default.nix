@@ -13,8 +13,10 @@
   ];
 
   home = {
-    username = "sean";
-    homeDirectory = "/home/sean";
+    username = "marcy";
+    homeDirectory = "/home/marcy";
+    file.".config/lockonsleep/config.sh".source = ./lock.sh;
+    file.".config/foot/foot.ini".source = ./foot.ini;
   };
 
   gtk = {
@@ -27,6 +29,20 @@
       };
     };
   };
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+    systemd.enable = true;
+    settings = import ./hyprland.nix;
+  };
+
+  programs.waybar = {
+    enable = true;
+    settings = import ./waybar.nix;
+    style = import ./waybar-style.nix;
+  };
+
+  services.udiskie.enable = true;
 
   # let HM manage itself when in standalone mode
   programs.home-manager.enable = true;

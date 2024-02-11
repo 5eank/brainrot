@@ -20,11 +20,11 @@
 
   commonArgs = {inherit self inputs;};
 in {
-  "hostname" = mkSystem {
+  "Waverley" = mkSystem {
     specialArgs = commonArgs;
     modules = [
       # this list defines which files will be imported to be used as "modules" in the system config
-      ./hostname/configuration.nix
+      ./Waverley/configuration.nix
       # use the nixos-module for home-manager
       home-manager
       home

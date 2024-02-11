@@ -5,6 +5,7 @@
     fastfetch
     firefox
     gparted
+    nwg-launchers
     obs-studio
     steam
     vesktop

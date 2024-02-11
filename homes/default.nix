@@ -12,7 +12,7 @@
       inherit (config.networking) hostName;
     };
     users = {
-      sean = ./sean;
+      marcy = ./marcy;
       # more users can go here, the format is only for convenience
     };
   };
